@@ -46,3 +46,7 @@ ONLY DO THIS PART WHEN YOU HAVE COMPLETED THE REQUIREMENTS PART
 7. Prettier - Code formatter - Extension in VSCode
 
 ### Screenshots
+
+![countries](./screenshots/allCountries.png)
+
+![eachCountry](./screenshots/eachCountry.png)
