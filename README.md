@@ -12,7 +12,7 @@ This assignment is to practice TypeScript
 1. Fetch data from this API: https://restcountries.com/v3.1/all
 2. The user can search country by name
 3. Get country detail by this API: https://restcountries.com/v3.1/name/{name}
-4. When the user click to country name or a button it should show product detail
+4. When the user click to country name or a button it should show country detail
 5. The country detail should have name, region, population, flag and list of languages
 6. The user can add country to Favorite page
 7. When the user add a country to Favorite the favorite icon should change the color.
@@ -32,7 +32,7 @@ This assignment is to practice TypeScript
 ONLY DO THIS PART WHEN YOU HAVE COMPLETED THE REQUIREMENTS PART
 
 1. When the user add country to favorite list, the website should show a message: `A country is added to the favorite list`
-2. Sorting by product name
+2. Sorting by country name
 3. Deploy the project
 
 ### Useful sources
