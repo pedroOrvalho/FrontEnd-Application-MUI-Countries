@@ -1,5 +1,3 @@
-import homeLogo from "../images/home.png";
-
 export default function Home() {
 	return (
 		<div className="home_container">
