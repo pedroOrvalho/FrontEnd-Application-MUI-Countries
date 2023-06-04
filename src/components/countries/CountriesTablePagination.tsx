@@ -4,9 +4,12 @@ import { CountriesTablePaginationProps } from "../../types/types";
 
 import TablePagination from "@mui/material/TablePagination";
 
-export default function CountriesTablePagination({page, setPage,rowsPerPage, setRowsPerPage}: CountriesTablePaginationProps) {
-
-
+export default function CountriesTablePagination({
+	page,
+	setPage,
+	rowsPerPage,
+	setRowsPerPage,
+}: CountriesTablePaginationProps) {
 	const handleChangePage = (
 		event: React.MouseEvent<HTMLButtonElement> | null,
 		newPage: number

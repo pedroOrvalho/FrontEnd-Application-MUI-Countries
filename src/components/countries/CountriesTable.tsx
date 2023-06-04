@@ -15,6 +15,8 @@ export default function CountriesTable({
 	userSearchFilterList,
 	isLoading,
 	setIsLoading,
+	favorite,
+	setFavorite,
 }: CountryTableProps) {
 	const [page, setPage] = React.useState(0);
 	const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -36,11 +38,10 @@ export default function CountriesTable({
 				<CountriesTableBody
 					userSearchFilterList={userSearchFilterList}
 					isLoading={isLoading}
-					setIsLoading={setIsLoading}
 					page={page}
-					setPage={setPage}
 					rowsPerPage={rowsPerPage}
-					setRowsPerPage={setRowsPerPage}
+					favorite={favorite}
+					setFavorite={setFavorite}
 				/>
 			</Table>
 			<CountriesTablePagination

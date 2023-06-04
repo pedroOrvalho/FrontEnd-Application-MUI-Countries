@@ -24,22 +24,31 @@ export type Country = {
 		latlng: number[];
 	};
 	independent: boolean;
+	maps: {
+		googleMaps: string;
+	};
+};
+
+export type CountriesProps = {
+	favorite: Country[];
+	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
 };
 
 export type CountryTableProps = {
 	userSearchFilterList: Country[];
 	isLoading: boolean;
 	setIsLoading: (loading: boolean) => void;
+	favorite: Country[];
+	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
 };
 
 export type CountriesTableBodyProps = {
 	userSearchFilterList: Country[];
-  isLoading: boolean;
-	setIsLoading: (loading: boolean) => void;
-  page: number;
-	setPage: (number: number) => void;
+	isLoading: boolean;
+	page: number;
 	rowsPerPage: number;
-	setRowsPerPage: (number: number) => void;
+	favorite: Country[];
+	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
 };
 
 export type CountriesTablePaginationProps = {
@@ -47,4 +56,17 @@ export type CountriesTablePaginationProps = {
 	setPage: (number: number) => void;
 	rowsPerPage: number;
 	setRowsPerPage: (number: number) => void;
+};
+
+export type CountryCardProps = {
+	country: Country;
+};
+
+export type FavoriteProp = {
+	favorite: Country[];
+};
+
+export type CountryDetailProp = {
+	favorite: Country[];
+	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
 };

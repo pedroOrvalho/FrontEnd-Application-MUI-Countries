@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import SearchForm from "../components/SearchForm";
 import CountriesTable from "../components/countries/CountriesTable";
 
-import { Country } from "../types/types";
+import { CountriesProps, Country } from "../types/types";
 
-export default function Countries() {
+export default function Countries({ favorite, setFavorite }: CountriesProps) {
 	const [userSearch, setUserSearch] = useState<string>("");
 	const [countriesData, setCountriesData] = useState<Country[]>([]);
 	const [isLoading, setIsLoading] = useState(true);
@@ -31,12 +31,13 @@ export default function Countries() {
 
 	return (
 		<div>
-			<h1>Countries</h1>
 			<SearchForm userSearch={userSearch} setUserSearch={setUserSearch} />
 			<CountriesTable
 				userSearchFilterList={userSearchFilterList}
 				isLoading={isLoading}
 				setIsLoading={setIsLoading}
+				favorite={favorite}
+				setFavorite={setFavorite}
 			/>
 		</div>
 	);

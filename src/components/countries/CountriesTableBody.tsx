@@ -1,5 +1,8 @@
-import { CountriesTableBodyProps } from "../../types/types";
+import { Link } from "react-router-dom";
 
+import { CountriesTableBodyProps, Country } from "../../types/types";
+
+import { IconButton } from "@mui/material";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
@@ -9,12 +12,29 @@ import ArrowForwardIosOutlinedIcon from "@mui/icons-material/ArrowForwardIosOutl
 export default function CountriesTableBody({
 	userSearchFilterList,
 	isLoading,
-	setIsLoading,
 	page,
-	setPage,
 	rowsPerPage,
-	setRowsPerPage,
+	favorite,
+	setFavorite,
 }: CountriesTableBodyProps) {
+	function isAlreadyFavorite(country: Country): boolean {
+		return favorite.some(
+			(favoriteCountry) => favoriteCountry.cca3 === country.cca3
+		);
+	}
+
+	function addToFavorites(country: Country) {
+		if (isAlreadyFavorite(country)) {
+			setFavorite((prevFavorites: Country[]) =>
+				prevFavorites.filter(
+					(favoriteCountry) => favoriteCountry.cca3 !== country.cca3
+				)
+			);
+		} else {
+			setFavorite((prevFavorites: Country[]) => [...prevFavorites, country]);
+		}
+	}
+
 	return (
 		<TableBody>
 			{isLoading ? (
@@ -54,10 +74,19 @@ export default function CountriesTableBody({
 								)}
 						</TableCell>
 						<TableCell>
-							<FavoriteBorderOutlinedIcon />
+							<IconButton
+								aria-label="add to favorites"
+								color={isAlreadyFavorite(country) ? "error" : "default"}
+								onClick={() => addToFavorites(country)}
+							>
+								<FavoriteBorderOutlinedIcon />
+							</IconButton>
 						</TableCell>
 						<TableCell>
-							<ArrowForwardIosOutlinedIcon />
+							<Link to={`/countries/${country.name.common}`}>
+								{" "}
+								<ArrowForwardIosOutlinedIcon />
+							</Link>
 						</TableCell>
 					</TableRow>
 				))
