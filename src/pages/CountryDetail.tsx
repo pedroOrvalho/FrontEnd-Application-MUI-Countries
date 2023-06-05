@@ -88,7 +88,7 @@ export default function CountryDetail({
 			setFavorite((prevFavorites: Country[]) => [...prevFavorites, country]);
 		}
 	}
-console.log(country)
+	console.log(country);
 	if (isLoading) {
 		return (
 			<div>

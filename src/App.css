@@ -30,15 +30,69 @@
 	background-image: url("./images/home.png");
 	background-repeat: no-repeat;
 	background-size: 65rem;
-  background-position: 80% 45%;
+	background-position: 80% 45%;
 	width: 100%;
 }
 
 .home_content {
 	width: 35rem;
-  height: 40rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 8rem;
+	height: 40rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 8rem;
+}
+
+/*--------------------------- Favorite ---------------------------*/
+.favorite_container h1 {
+	text-align: center;
+	font-size: 4rem;
+	font-weight: 400;
+	align-content: center;
+}
+
+.favorite_item_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+
+.item_content_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.favorite_no_results {
+	font-size: 2rem;
+	color: rgba(0, 0, 0, 0.478);
+  text-align: center;
+}
+
+.item_content {
+	font-size: 1.5rem;
+	width: 22rem;
+	text-align: center;
+}
+
+.item_name {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.item_content span {
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+.favorite_item_container img {
+	width: fit-content;
+	height: 180px;
+	border: 1px solid rgba(0, 0, 0, 0.522);
+}
+
+.delete_button {
+	padding: 0 4rem;
 }

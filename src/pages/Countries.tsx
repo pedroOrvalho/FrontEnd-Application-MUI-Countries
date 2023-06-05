@@ -8,7 +8,7 @@ import { CountriesProps, Country } from "../types/types";
 export default function Countries({ favorite, setFavorite }: CountriesProps) {
 	const [userSearch, setUserSearch] = useState<string>("");
 	const [countriesData, setCountriesData] = useState<Country[]>([]);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState<boolean>(true);
 
 	useEffect(() => {
 		fetch("https://restcountries.com/v3.1/all")

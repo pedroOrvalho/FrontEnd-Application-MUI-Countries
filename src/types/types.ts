@@ -64,9 +64,15 @@ export type CountryCardProps = {
 
 export type FavoriteProp = {
 	favorite: Country[];
+	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
+
 };
 
 export type CountryDetailProp = {
 	favorite: Country[];
 	setFavorite: React.Dispatch<React.SetStateAction<Country[]>>;
 };
+
+export type NavBarProps = {
+  favoriteLength: number;
+}

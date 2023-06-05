@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
+import { NavBarProps } from "../types/types";
+
 import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
-import { Paper } from "@mui/material";
+import { Paper, Badge } from "@mui/material";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -14,7 +16,7 @@ function HomeIcon(props: SvgIconProps) {
 	);
 }
 
-export default function NavBar() {
+export default function NavBar({ favoriteLength }: NavBarProps) {
 	return (
 		<Paper elevation={8} style={{ margin: "0.3rem 0.5rem" }}>
 			<div className="navbar_container">
@@ -24,12 +26,16 @@ export default function NavBar() {
 				</div>
 				<div className="navlink_container">
 					<Link to="/">
-						<HomeIcon fontSize="large" />
+						<HomeIcon sx={{ color: "white" }} fontSize="large" />
 					</Link>
 					<Link to="/countries">
-						<TravelExploreIcon fontSize="large" />
+						<TravelExploreIcon sx={{ color: "white" }} fontSize="large" />
 					</Link>
-					<Link to="/favorite"><FavoriteIcon fontSize="large" /></Link>
+					<Link to="/favorite">
+						<Badge color="secondary" badgeContent={favoriteLength} showZero>
+							<FavoriteIcon sx={{ color: "white" }} fontSize="large" />
+						</Badge>
+					</Link>
 				</div>
 			</div>
 		</Paper>

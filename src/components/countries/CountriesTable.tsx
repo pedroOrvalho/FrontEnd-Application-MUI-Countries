@@ -19,7 +19,7 @@ export default function CountriesTable({
 	setFavorite,
 }: CountryTableProps) {
 	const [page, setPage] = React.useState(0);
-	const [rowsPerPage, setRowsPerPage] = React.useState(10);
+	const [rowsPerPage, setRowsPerPage] = React.useState<number>(10);
 
 	return (
 		<TableContainer component={Paper}>

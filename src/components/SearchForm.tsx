@@ -22,21 +22,21 @@ export default function SearchForm({
 	}
 
 	return (
-    <div className="searchForm_container">
-    <div className="searchForm_content">
-      <TextField
-        value={userSearch}
-        id="standard-basic"
-        label="Enter your product..."
-        variant="standard"
-        onChange={handleChange}
-      />
-    </div>
-    <div className="form_clear">
-      <Button variant="text" onClick={handleClear}>
-        Clear
-      </Button>
-    </div>
-  </div>
+		<div className="searchForm_container">
+			<div className="searchForm_content">
+				<TextField
+					value={userSearch}
+					id="standard-basic"
+					label="Enter an country..."
+					variant="standard"
+					onChange={handleChange}
+				/>
+			</div>
+			<div className="form_clear">
+				<Button variant="text" onClick={handleClear}>
+					Clear
+				</Button>
+			</div>
+		</div>
 	);
 }
